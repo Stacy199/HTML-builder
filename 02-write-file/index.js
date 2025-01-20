@@ -14,7 +14,6 @@ function fileCreater(){
 
     fs.open(filePath, 'w', (err) => {
         if(err) throw err;
-        console.log(`File created in ${filePath}`);
         textEnter();
     });
 }
