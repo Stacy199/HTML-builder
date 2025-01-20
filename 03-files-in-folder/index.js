@@ -17,9 +17,10 @@ fs.readdir(filePath, (error, files) => {
             return console.error(error);
         }
         if(stats.isFile()){
+            const fileName = path.basename(file, path.extname(file));
             const fileExtention = path.extname(file).slice(1);
             const sizeKB = (stats.size/1024).toFixed(3);
-            console.log(`${file} - ${fileExtention} - ${sizeKB}kb`);  
+            console.log(`${fileName} - ${fileExtention} - ${sizeKB}kb`);  
         }
     });
 });
